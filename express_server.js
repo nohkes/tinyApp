@@ -27,7 +27,7 @@ app.get("/urls/new", (req, res) => {
 
 
 
-app.get("/url", (req, res) => {
+app.get("/urls", (req, res) => {
   let templateVars = { urls: urlDatabase };
   res.render("urls_index", templateVars)	
 });
@@ -48,8 +48,18 @@ app.post("/urls", (req, res) => {
   urlDatabase[giveMeNum] = req.body.longURL;
   // let shortURL = generateRandomString() // debug statement to see POST parameters
   // urlDatabase[shortURL] = req.body.longURL;
-  res.redirect("http://localhost:8080/urls/" + giveMeNum);         // Respond with 'Ok' (we will replace this)
+  res.redirect("/urls/" + giveMeNum);         // Respond with 'Ok' (we will replace this)
 });
+
+app.post("/urls/:id/delete", (req, res) => {
+delete urlDatabase[req.params.id];
+  res.redirect("/urls")
+})
+
+app.post("/urls/:id", (req, res) => {
+	urlDatabase[req.params.id] = req.body.changeURL
+	res.redirect("/urls")
+})
 
 // app.get("/urls.json", (req, res) => {
 //   res.json(urlDatabase);

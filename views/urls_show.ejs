@@ -9,10 +9,18 @@
     <% include ./partials/_header %>
 </header>
     <h1>My URL Shortener</h1>
-  
-        <p><%= shortURL %> : <%= longURL %></p>
+  			
+        <p>
 
+        	<form method="POST" action="/urls/<%= shortURL %>">
+        	
+        	<%= shortURL %> : <%= longURL %>
+        		
+        		<input type="text" name="changeURL" placeholder="http://" style="width: 300px">
 
+        	</p>
+
+        	</form>	
 
 <!-- <p>Go back to <a href="/">home page</a></p> -->
 

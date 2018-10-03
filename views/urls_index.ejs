@@ -10,12 +10,15 @@
 </header>
     <h1>My URL Shortener</h1>
   
+            <% for (var i in urls) { %>
+            <form method="POST" action="/urls/<%= i %>/delete"> 
+        <li><%= i %> : <%= urls[i] %></li><button> Delete</button>
+    <% }; %>	
+  </form>
 
-    <ul>
-    <% for (var i in urls) { %>
-        <li><%= i %> : <%= urls[i] %></li>
-    <% }; %>
-</ul>
+   
+    
+
 
 
 <!-- <p>Go back to <a href="/">home page</a></p> -->
