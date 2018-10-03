@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
+
+
   <title>TinyApp</title>
-</head>
-<body>
+
     <!-- Add your EJS code here -->
     <h1>
-
-</h1>
-
-
+    	<%if ((username) && username !== null) {%>  
+    	<%=username %> 
+		<form method ='POST' action ="/logout" ><button>Logout</button>
+		</form>
+     
+     <%} else {%> 
+     <form method="POST" action="/login">	
+	<input type="text" name="username"> <button> submit</button>
+</form>
+<%}%> 
+	</h1>
 
 <!-- <p>Go back to <a href="/">home page</a></p> -->
 
-</body>
-</html>
+
