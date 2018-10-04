@@ -6,27 +6,28 @@
 <body>
     <!-- Add your EJS code here -->
       <header>
-    <% include ./partials/_header %>
+    <% include ./partials/_header.ejs %>
 </header>
     <h1>My URL Shortener</h1>
   			
-
-
-
-
-        <p>
+	
 
         	<form method="POST" action="/urls/<%= shortURL %>">
-        	
+
         	<%= shortURL %> : <%= longURL %>
+
+
+
+       <input type="text" name="changeURL" placeholder="http://" style="width: 300px"> <button> magic</button>
+
+						</form>
+				
+
+
+      
+
         		
-        		<input type="text" name="changeURL" placeholder="http://" style="width: 300px"> <button> magic</button>
-        			
-        	</p>
 
-        	</form>	
-
-<!-- <p>Go back to <a href="/">home page</a></p> -->
-
+ <p>Go back to <a href="/">home page</a></p>
 </body>
 </html>

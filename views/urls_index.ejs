@@ -4,12 +4,17 @@
   <title>TinyApp</title>
 </head>
 <body>
-    <!-- Add your EJS code here -->
+    
       <header>
-    <% include ./partials/_header %>
+    <% include ./partials/_header.ejs %>
 </header>
     <h1>My URL Shortener</h1>
-  
+  				<!--<div>
+  					<a href="/login">Login</a>
+  					<a href="/register">Register</a>
+  				</div> -->
+
+
             <% for (var i in urls) { %>
             
             <form method="POST" action="/urls/<%= i %>/delete"> 
@@ -20,8 +25,6 @@
    			 
    			 <% }; %>	
   </form>
-
-   
     
 
 
